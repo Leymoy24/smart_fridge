@@ -1,0 +1,199 @@
+
+GET /api/fridge/groceries
+default
+{
+    "groceries": [
+        {
+            "id_grocery": 1,
+            "grocery_type_id_grocery_type": 4,
+            "name": "Помидор турецкий",
+            "expiritation_date": "06.10.2023",
+            "quantity": 10,
+            "weight": 2.4,
+            "description": ""
+        },
+        {
+            "id_grocery": 2,
+            "grocery_type_id_grocery_type": 2,
+            "name": "Огурец длинный",
+            "expiritation_date": "06.10.2023",
+            "quantity": 4,
+            "weight": 500.0,
+            "description": ""
+        },    
+    ]
+}
+
+
+
+GET /api/fridge/grocery/{grocery_id}
+
+200
+{
+    "grocery": grocery
+}
+
+404
+{
+    "message": "Продукт не найден в холодильнике!"
+}
+
+
+
+
+POST /api/fridge/create_grocery
+{
+    "grocery": {
+        "id_grocery": null,
+        "grocery_type_id_grocery_type": 4,
+        "name": "Помидор азербайджанский",
+        "expiritation_date": "06.10.2023",
+        "quantity": 10,
+        "weight": 2400.0,
+        "description": ""
+    }
+}
+
+200
+{
+    "message": "Продукт успешно добавлен в холодильник."
+}
+
+400
+{
+    "message": "Данные введены неверно!"
+}
+
+
+
+DELETE /api/fridge/delete_grocery/{grocery_id}
+
+200
+{
+    "message": "Продукт успешно удален из холодильник."
+}
+
+404
+{
+    "message": "Продукт не найден в холодильнике!"
+}
+
+
+PUT /api/fridge/update_grocery/{grocery_id}
+{
+    "grocery": {
+        "grocery_type_id_grocery_type": 4,
+        "name": "Помидор абхазский",
+        "expiritation_date": "10.10.2023",
+        "quantity": 12,
+        "weight": 2800.0,
+        "description": ""
+    }
+}
+
+200
+{
+    "message": "Продукт успешно удален из холодильник."
+}
+
+400
+{
+    "message": "Данные введены неверно!"
+}
+
+
+404
+{
+    "message": "Продукт не найден в холодильнике!"
+}
+
+
+---------------------------------------
+
+GET /api/fridge/grocery_type/{grocery_type_id}
+
+200
+{
+    "grocery_type": grocery_type
+}
+
+404
+{
+    "message": "Тип продукта не найден!"
+}
+
+
+POST /api/fridge/create_grocery_type
+{
+    "id_grocery_type": 1,
+    "grocery_group_id_grocery_group": 5,
+    "name": "Помидор"
+}
+
+200
+{
+    "message": "Тип продукта успешно добавлен в холодильник."
+}
+
+400
+{
+    "message": "Данные введены неверно!"
+}
+
+
+DELETE /api/fridge/delete_grocery_type/{grocery_type_id}
+200
+{
+    "message": "Тип продукта успешно удален."
+}
+
+404
+{
+    "message": "Тип продукта не найден!"
+}
+
+
+
+
+
+-------------------------------
+
+GET /api/fridge/grocery_group/{grocery_group_id}
+
+200
+{
+    "grocery_group": grocery_group
+}
+
+404
+{
+    "message": "Группа продуктов не найдена!"
+}
+
+POST /api/fridge/create_grocery_group
+{
+    "id_grocery_group": 1,
+    "name": "Овощи"
+}
+
+200
+{
+    "message": "Группа продуктов успешно добавлена в холодильник."
+}
+
+400
+{
+    "message": "Данные введены неверно!"
+}
+
+
+DELETE /api/fridge/delete_grocery_group/{grocery_group_id}
+200
+{
+    "message": "Группа продуктов успешно удалена."
+}
+
+404
+{
+    "message": "Группа продуктов не найдена!"
+}

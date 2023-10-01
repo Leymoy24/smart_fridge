@@ -1,0 +1,74 @@
+{
+    "type": "object",
+    "properties": {
+        "groceries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "grocery_id": {
+                        "type": "integer"
+                    },
+                    "grocery_type_id_grocery_type": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "expiritation_date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    },
+                    "weight": {
+                        "type": "float"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "required": ["grocery_id", "grocery_type_id_grocery_type", "name", "expiritation_date", "quantity", "weight", "description"]
+            }
+        }
+    }
+}
+
+----------------------------
+
+{
+    "type": "object",
+    "properties": {
+        "id_grocery_type": {
+            "type": "integer"
+        },
+        "grocery_group_id_grocery_group": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": ["id_grocery_type", "grocery_group_id_grocery_group", "name"]
+}
+
+---------------------------
+
+{
+    "type": "object",
+    "properties": {
+        "id_grocery_group": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": ["id_grocery_group", "name"]
+}
+
+
+
+
+
